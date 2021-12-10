@@ -10,17 +10,19 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MoneyModule } from './money/money.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ShoppingListModule,
-    ToolbarModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    ShoppingListModule,
+    ToolbarModule,
+    MoneyModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

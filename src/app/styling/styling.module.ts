@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ToastModule } from 'primeng/toast';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [],
   exports: [
@@ -18,6 +19,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ConfirmPopupModule,
     ToastModule,
     InputNumberModule,
+    TableModule,
   ],
 })
 export class StylingModule {}
