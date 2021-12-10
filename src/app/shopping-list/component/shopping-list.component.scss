@@ -1,0 +1,54 @@
+.p-inputgroup {
+  margin-top: 1rem;
+}
+
+.greens {
+  background-color: rgb(99, 143, 99);
+}
+
+.cards {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.card {
+  background-color: #1f2d40;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+h3 {
+  text-align: center;
+  top: 1rem;
+  position: relative;
+}
+
+.shopping-btn {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.card-text {
+  padding-right: 3rem;
+}
+
+.quantity-block {
+  font-size: 1rem;
+}
+
+.quantity-btn {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 5px;
+  background: #131d2b;
+  display: inline;
+}
+
+.quantity-btn:hover {
+  cursor: pointer;
+}

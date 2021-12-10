@@ -1,0 +1,71 @@
+<form (ngSubmit)="onSubmit(itemForm)" #itemForm="ngForm">
+  <div class="p-inputgroup">
+    <button
+      type="button"
+      pButton
+      pRipple
+      icon="pi pi-bolt"
+      class="p-button-warning"
+      (click)="onHotKey()"
+    ></button>
+    <input
+      autocomplete="off"
+      autofocus
+      #item="ngModel"
+      required
+      ngModel
+      name="item"
+      type="text"
+      pInputText
+      placeholder="Ingredient"
+    />
+    <button
+      type="submit"
+      pButton
+      pRipple
+      icon="pi pi-save"
+      class="p-button-info"
+    ></button>
+  </div>
+</form>
+
+<div class="cards">
+  <mat-card class="card" *ngFor="let product of products">
+    <div class="quantity-block">
+      <div class="quantity-btn" (click)="onChangeQuantity(product, 'min')">
+        -
+      </div>
+      &nbsp;
+      {{ product.quantity }}
+      <div class="quantity-btn" (click)="onChangeQuantity(product, 'plus')">
+        +
+      </div>
+    </div>
+    <div class="card-text">
+      {{ product.item }}
+    </div>
+    <button
+      pButton
+      pRipple
+      icon="pi pi-times"
+      class="shopping-btn p-button-sm p-button-text"
+      (click)="onSetShoppingCart(product)"
+    ></button>
+  </mat-card>
+</div>
+
+<div class="cards" *ngIf="shoppingCartProducts.length > 0">
+  <h3>Already in shoppingcart</h3>
+  <mat-card class="card" *ngFor="let product of shoppingCartProducts">
+    {{ product.quantity }} &nbsp; {{ product.item }}
+  </mat-card>
+  <button
+    pButton
+    pRipple
+    class="p-button-raised p-button-help"
+    label="Finished shopping"
+    (click)="confirm($event)"
+  ></button>
+</div>
+
+<p-confirmPopup></p-confirmPopup>

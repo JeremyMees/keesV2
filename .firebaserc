@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shopping-list-be788": {
+      "hosting": {
+        "kees": [
+          "shopping-list-be788"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shopping-list-be788"
+  }
+}
