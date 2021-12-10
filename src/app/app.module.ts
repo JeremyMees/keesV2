@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MoneyModule } from './money/money.module';
+import { RecipesModule } from './recipes/recipes.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,6 +24,7 @@ import { MoneyModule } from './money/money.module';
     ShoppingListModule,
     ToolbarModule,
     MoneyModule,
+    RecipesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
