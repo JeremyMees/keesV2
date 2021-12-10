@@ -12,6 +12,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MoneyModule } from './money/money.module';
 import { RecipesModule } from './recipes/recipes.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -25,6 +26,12 @@ import { RecipesModule } from './recipes/recipes.module';
     ToolbarModule,
     MoneyModule,
     RecipesModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
