@@ -11,14 +11,13 @@ export class ShoppingListService {
   constructor(private firestore: AngularFirestore) {}
 
   public addNewProduct(product: Product): void {
-    console.log(product);
     this.firestore.collection('food').add(product);
   }
 
   public getProducts(): Observable<Array<DocumentData>> {
-    return this.firestore.collection('food').valueChanges() as Observable<
-      Array<DocumentData>
-    >;
+    return this.firestore
+      .collection('food', (ref) => ref.orderBy('item', 'asc'))
+      .valueChanges() as Observable<Array<DocumentData>>;
   }
 
   public deleteProduct(product: Product): void {
